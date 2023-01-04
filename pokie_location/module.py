@@ -7,15 +7,13 @@ class Module(BaseModule):
     name = "location"
     description = "Location Services"
 
-    cmd = {
-    }
+    cmd = {}
 
     services = {
         SVC_LOCATION: "pokie_location.service.LocationService",
     }
 
-    jobs = [
-    ]
+    jobs = []
 
     fixtures = []
 

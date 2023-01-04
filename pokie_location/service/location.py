@@ -44,10 +44,14 @@ class LocationService(Injectable):
 
     def _get_tz_records(self) -> List[TimeZoneRecord]:
         if self.timezones is None:
-            self.timezones = self.tz_repository.fetch_all_ordered(TimeZoneRecord.timezone)
+            self.timezones = self.tz_repository.fetch_all_ordered(
+                TimeZoneRecord.timezone
+            )
         return self.timezones
 
     def _get_country_records(self) -> List[CountryRecord]:
         if self.countries is None:
-            self.countries = self.country_repository.fetch_all_ordered(CountryRecord.name)
+            self.countries = self.country_repository.fetch_all_ordered(
+                CountryRecord.name
+            )
         return self.countries
