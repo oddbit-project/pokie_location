@@ -1,1 +1,1 @@
-pokie>=0.3.0
+git+https://git.oddbit.org/OddBit/pokie.git
