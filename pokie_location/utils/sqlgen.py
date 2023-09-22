@@ -12,7 +12,7 @@ def process_iso3166(src_file, dest_file):
     tpl_line = "INSERT INTO country(id_country, name) VALUES('{country}', '{name}');\n"
     contents = []
     with open(src_file, "r") as src:
-        for l in src.readlines():
+        for l in src:
             if not l.startswith("#"):
                 row = l.split("\t")
                 contents.append(
@@ -27,7 +27,7 @@ def process_zone(src_file, dest_file):
     tpl_line = "INSERT INTO timezone(id_timezone, fk_country) VALUES('{timezone}', '{country}');\n"
     contents = []
     with open(src_file, "r") as src:
-        for l in src.readlines():
+        for l in src:
             if not l.startswith("#"):
                 row = l.split("\t")
                 contents.append(

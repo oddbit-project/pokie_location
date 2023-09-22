@@ -16,19 +16,13 @@ class LocationService(Injectable):
         return self._get_country_records()
 
     def country_list(self) -> dict:
-        result = {}
-        for record in self._get_country_records():
-            result[record.code] = record.name
-        return result
+        return {record.code: record.name for record in self._get_country_records()}
 
     def get_timezones(self) -> List[TimeZoneRecord]:
         return self._get_tz_records()
 
     def timezone_list(self) -> List:
-        result = []
-        for r in self._get_tz_records():
-            result.append(r.timezone)
-        return result
+        return [r.timezone for r in self._get_tz_records()]
 
     def purge_cache(self):
         self.timezones = None
